@@ -16,10 +16,6 @@ const buttonElement = document.getElementById('button')
 const RandMail = 'https://flynn.boolean.careers/exercises/api/random/mail'
 
 
-
-
-
-
 tenRandommail(RandMail)
 
 
@@ -27,24 +23,10 @@ buttonElement.addEventListener('click', function () {
 tenRandommail(RandMail)
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function tenRandommail (array){
+function tenRandommail (url){
 
 let  mail = ''
+mailElement.innerHTML = mail
     for(let i = 0 ; i< 10 ; i++){
 
 
@@ -54,7 +36,7 @@ let  mail = ''
 
             console.log(response.data.response)
               
-        mail = mail + `<li class="list-group-item">${response.data.response}</li>` 
+        mail += `<li class="list-group-item">${response.data.response}</li>` 
          
         // console.log(mail)     
         mailElement.innerHTML = mail
