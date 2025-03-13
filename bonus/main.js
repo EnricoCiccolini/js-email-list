@@ -18,28 +18,34 @@ const RandMail = 'https://flynn.boolean.careers/exercises/api/random/mail'
 let  mail = ''
 
 
+tenRandommail(RandMail)
+
+function tenRandommail (array){
+
+
+    for(let i = 0 ; i< 10 ; i++){
 
 
 
+        axios.get(RandMail).then((response) =>{
+              
+        mail = mail + `<li class="list-group-item">${response.data.response}</li>` 
+         
+         console.log(mail)     
+        mailElement.innerHTML = mail
+            
+        } )
+        .catch(error => {
+            console.log("errore ")
+        })    
+        
+        
+        
+        }
+        
 
-for(let i = 0 ; i< 10 ; i++){
-
-
-
-axios.get(RandMail).then((response) =>{
-      
-mail = mail + `<li class="list-group-item">${response.data.response}</li>` 
- 
- console.log(mail)     
-mailElement.innerHTML = mail
     
-} )
-.catch(error => {
-    console.log("errore ")
-})    
-
-
-
 }
+
 
 
